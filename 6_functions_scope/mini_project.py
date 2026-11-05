@@ -1,0 +1,78 @@
+numbers = [42, 17, 83, 5, 61, 29, 74, 8, 55, 93, 31, 66, 14, 47, 78, 3, 59, 22, 86, 40]
+
+
+def find_max(numbers):
+    maximum = numbers[0]
+
+    for integer in numbers:
+        if integer > maximum:
+            maximum = integer
+    return maximum
+
+def find_min(numbers):
+    minimum = numbers[0]
+    for integer in numbers:
+        if integer < minimum:
+            minimum = integer
+    return minimum
+
+def search(numbers, target_number):
+    for i, integer in enumerate(numbers):
+        if integer == target_number:
+            return i
+    return -1
+
+
+def bubble_sort(numbers):
+    sorted_list = numbers[:]
+    n = len(numbers)
+
+    for i in range(n-1):
+        for j in range(n-i-1):
+            if sorted_list[j] > sorted_list[j+1]:
+                sorted_list[j],sorted_list[j+1]= sorted_list[j+1], sorted_list[j]
+    return sorted_list
+
+def show_menu():
+    option = input("""== Number Cruncher ==
+1. Find Minimum
+2. Find Maximum
+3. Search for a number
+4. Sort the list
+5. Quit
+Enter an option (1-5): """)
+    return option
+
+def main():
+    display = True
+
+    option = (show_menu())
+
+    while display == True:
+        if option == "1":
+            print(find_min(numbers))
+            option = (show_menu())
+
+        if option == "2":
+            print(find_max(numbers))
+            option = (show_menu())
+
+        if option == "3":
+            target_number = int(input("Enter a number to search: "))
+            index = search(numbers, target_number)
+            
+            if index != -1:
+                print(f"Found at index {index}")
+            else:
+                print("Not found")
+            option = (show_menu())
+
+        if option == "4":
+            print(bubble_sort(numbers))
+            option = (show_menu())
+
+        if option == "5":
+            display = False
+            print("Goodbye.")
+
+main()
