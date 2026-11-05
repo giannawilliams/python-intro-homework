@@ -20,7 +20,7 @@ def search(numbers, target_number):
     for i, integer in enumerate(numbers):
         if integer == target_number:
             return i
-        return -1
+    return -1
 
 
 def bubble_sort(numbers):
@@ -34,7 +34,13 @@ def bubble_sort(numbers):
     return sorted_list
 
 def show_menu():
-    option = int(input("""== Number Cruncher ==\n1. Find Minimum\n 2. Find Maximum\n 3. Search for a number\n 4. Sort the list\n 5. Quit\nEnter an option (1-5):"""))
+    option = input("""== Number Cruncher ==
+1. Find Minimum
+2. Find Maximum
+3. Search for a number
+4. Sort the list
+5. Quit
+Enter an option (1-5): """)
     return option
 
 def main():
@@ -44,15 +50,15 @@ def main():
     option = int(show_menu())
 
     while display == True:
-        if option == 1:
+        if option == "1":
             print(find_min(numbers))
             option = int(show_menu())
 
-        if option == 2:
+        if option == "2":
             print(find_max(numbers))
             option = int(show_menu())
 
-        if option == 3:
+        if option == "3":
             target_number = int(input("Enter a number to search: "))
             index = search(numbers, target_number)
             
@@ -62,11 +68,12 @@ def main():
                 print("Not found")
             option = int(show_menu())
 
-        if option == 4:
+        if option == "4":
             print(bubble_sort(numbers))
             option = int(show_menu())
 
-        if option == 5:
+        if option == "5":
             display = False
             print("Goodbye.")
 
+main()
