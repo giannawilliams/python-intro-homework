@@ -47,30 +47,30 @@ def main():
     display = True
 
     show_menu()
-    option = int(show_menu())
+    option = (show_menu())
 
     while display == True:
         if option == "1":
             print(find_min(numbers))
-            option = int(show_menu())
+            option = (show_menu())
 
         if option == "2":
             print(find_max(numbers))
-            option = int(show_menu())
+            option = (show_menu())
 
         if option == "3":
             target_number = int(input("Enter a number to search: "))
             index = search(numbers, target_number)
             
-            if index != 1:
+            if index != -1:
                 print(f"Found at index {index}")
             else:
                 print("Not found")
-            option = int(show_menu())
+            option = (show_menu())
 
         if option == "4":
             print(bubble_sort(numbers))
-            option = int(show_menu())
+            option = (show_menu())
 
         if option == "5":
             display = False
