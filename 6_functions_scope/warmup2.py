@@ -1,8 +1,8 @@
 def celsius_to_fahrenheit(c):
-    return round((c * 9/5) + 32,2)
+    return round((c * 9/5) + 32,1)
 
 def fahrenheit_to_celsius(f):
-    return round((f - 32) * 5/9,2)
+    return round((f - 32) * 5/9,1)
 
 temp_f_to_c = 72
 temp_c_to_f = 0
