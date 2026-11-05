@@ -46,7 +46,6 @@ Enter an option (1-5): """)
 def main():
     display = True
 
-    show_menu()
     option = (show_menu())
 
     while display == True:
