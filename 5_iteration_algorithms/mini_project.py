@@ -40,11 +40,9 @@ while display == True:
                 
         if number_in_list == True:
             print(f"The number {target_number} was found at index {found_index}")
-            break
             
         if number_in_list == False:
             print(f"{target_number} is not in the list.")
-            break
 
         option = int(input("== Number Cruncher ==\n1. Find Minimum\n 2. Find Maximum\n 3. Search for a number\n 4. Sort the list\n 5. Quit\nEnter an option (1-5):"))
 
