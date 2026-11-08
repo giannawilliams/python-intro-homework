@@ -31,7 +31,10 @@ try:
                     rows_skipped +=1
                     skipped_rows.append(f"Row {rows_attempted}: ValueError — could not convert to float")
                     print(f"Row {rows_attempted}: ValueError — could not convert value to float")
-                    
+
+                except KeyError:
+                    skipped_rows.append(row)
+                    print(f"Row {rows_attempted}: KeyError -- Missing expected column")
                 
 
         except ValueError:
