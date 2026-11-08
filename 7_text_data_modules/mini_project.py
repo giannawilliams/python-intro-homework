@@ -1,4 +1,5 @@
 import os
+import sys
 
 # Use os.path.exists() to verify that ../data/expenses.csv
 # exists before opening it. If it doesn't, print an
@@ -9,7 +10,7 @@ path = os.path.join("C:/Users/daigi/python-intro-homework/7_text_data_modules/",
 if os.path.exists(path):
     print("expenses.csv found")
 else:
-    print("expenses.csv not found")
+    sys.exit("expenses.csv not found")
 
 # Read ../data/expenses.csv into a list of
 # dictionaries using csv.DictReader.
@@ -28,7 +29,8 @@ with open(path,'r') as expenses_csv:
 from datetime import datetime
 
 current_date = datetime.now()
-print(current_date.strftime("%B %d, %Y"))
+current_date = current_date.strftime("%B %d, %Y")
+print(current_date)
 
 my_lookup = input("Which category would you like to check?")
 
@@ -38,7 +40,7 @@ total_expenditure = round(sum(row['amount'] for row in expenses_my_lookup),2)
 with open(f'{my_lookup}_report.txt', 'w') as expense_report:
     expense_report.write(f"{my_lookup} Expense Report -- Generated {current_date}\n")
     for entry in expenses_my_lookup:
-        expense_report.write(f"{entry['date']} $ {entry['amount']}\n")
+        expense_report.write(f"{entry['date']}: $ {entry['amount']}\n")
     expense_report.write(f"Total: ${total_expenditure}")
 
 

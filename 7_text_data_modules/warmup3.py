@@ -10,3 +10,4 @@ if os.path.exists(path):
 else:
     print("expenses.csv not found")
 
+print(path)
