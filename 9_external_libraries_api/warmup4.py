@@ -23,3 +23,4 @@ try:
 
 except requests.exceptions.RequestException:
    print("There is a network error.")
+   exit()

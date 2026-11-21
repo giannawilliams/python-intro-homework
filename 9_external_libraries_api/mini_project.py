@@ -80,6 +80,9 @@ while True:
           for country in region_matches:
              print(f"{country['name']} — Capital: {country['capital']} | Region: {country['region']} | Population: {country['population']:,}")
 
+    if menu== "3":
+       break
+
 
 
        

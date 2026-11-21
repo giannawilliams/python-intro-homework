@@ -1,11 +1,6 @@
-import os
-from dotenv import load_dotenv
 import requests
-
-headers = {"Authorization": f"Bearer {API_KEY}"}
 response = requests.get(
-    "https://api.agify.io/?name=michael", headers=headers
-)
+    "https://api.agify.io/?name=michael")
 
 data = response.json()
 
