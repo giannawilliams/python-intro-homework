@@ -23,6 +23,7 @@ try:
 
 except requests.exceptions.RequestException:
    print("There is a network error.")
+   exit()
 
 
 
@@ -81,6 +82,7 @@ while True:
              print(f"{country['name']} — Capital: {country['capital']} | Region: {country['region']} | Population: {country['population']:,}")
 
     if menu== "3":
+       print("Exiting menu...")
        break
 
 
